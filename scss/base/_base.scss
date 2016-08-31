@@ -1,0 +1,22 @@
+button, h1, h2, li, p {
+  font-family: $lato;
+  color: $white;
+}
+
+h2 {
+  font: {
+    size: 32px;
+  }
+}
+
+p {
+  font: {
+    size: 18px;
+    weight: 300;
+  }
+  letter-spacing: 2px;
+}
+
+*:active, *:focus {
+  outline: none;
+}

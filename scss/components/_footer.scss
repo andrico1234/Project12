@@ -1,0 +1,62 @@
+.footer {
+  background: {
+    color: $red;
+  }
+}
+
+.footer-wrapper {
+  margin: 0 auto;
+  padding: {
+    top: 20px;
+  }
+  width: 90%;
+}
+
+.arrow-up-container {
+  margin: 0 auto;
+  padding: 10px 0 20px 0;
+  text-align: right;
+  width: 100%;
+
+  .arrow-up {
+    width: 30px;
+  }
+}
+
+.footer-svgImages {
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+  img {
+    padding: 5px 10px;
+    width: 30px;
+  }
+}
+
+.footer-button-container {
+  padding: 10px 0 20px 0;
+  text-align: center;
+  width: 100%;
+
+  button {
+    background: {
+      color: $red;
+    }
+
+    border: 1px solid white;
+    height: 45px;
+    width: 135px;
+
+    &:active {
+      background: {
+        color: darken($red, 5%);
+      }
+
+      box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+#mailImage {
+  padding-bottom: 7px;
+}
