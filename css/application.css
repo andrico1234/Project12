@@ -52,6 +52,29 @@ nav li {
   width: 90%; }
   .work-wrapper h1 {
     color: #e8535b; }
+  .work-wrapper h3, .work-wrapper p {
+    color: #ffffff; }
+
+.work-item {
+  background: #34495d;
+  height: auto;
+  margin: 0 0 20px 0;
+  position: relative; }
+  .work-item button {
+    bottom: 30px;
+    left: 5px;
+    position: absolute; }
+  .work-item h3 {
+    left: 5px;
+    position: absolute;
+    top: -10px; }
+  .work-item img {
+    width: 100%; }
+  .work-item p {
+    font-size: 0.8em;
+    left: 5px;
+    position: absolute;
+    top: 30px; }
 
 .footer {
   background-color: #e8535b; }

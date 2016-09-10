@@ -2,27 +2,35 @@
  * Created by Home on 31/08/2016.
  */
 
-
 // variables for overlay
 
-var lilWayne = 'Niggas be hatin Cause BG got it Every top of the line car they got Look I ride it From the Hummer to the Rover To the drop jag B and C lex truck Nothin my click aint had Everybody head was fucked When they heard bout the deal';
+var json = (function() {
+    var json = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': "js/data.json",
+        'dataType': "json",
+        'success': function (data) {
+            json = data;
+        }
+    });
+    return json;
+})();
 
-var jsonObject;
+// dummy overlay
 
-$.getJSON("js/data.json", function(json) {
-    jsonObject = json;
-});
 
 // global variables
 
 var $mainOverlay = $("<div class='mainOverlay'></div>");
 var $modalWrapper = $("<div class='modalWrapper'></div>");
-var $modalHeader = $("<h2 class='modalHeader'>" + jsonObject.portfolioProjects[0].name + "</h2>");
+var $modalHeader;
 var $modalClose = $("<img class='modalClose' src='img/icon-close.svg'>");
 var $modalDescriptionWrapper = $("<div class='modalDescriptionWrapper'></div>");
 var $modalSecondaryHeader = $("<h3 class='modalSecondaryHeader'>Project 12</h3>");
-var $modalProjectDescription = $("<p class='modalProjectDescription'>"+ lilWayne +"</p>");
-var $visitSiteButton = $("<button class='visitSiteButton'>Visit Site</button>");
+var $modalProjectDescription;
+var $visitSiteButton;
 var $horizontalLine = $("<hr/>");
 var $buttonDivWrapper = $("<div class='buttonDivWrapper'></div>");
 var $previousButtonDiv = $("<div class='previousButtonDiv'></div>");
@@ -34,14 +42,22 @@ var $nextArrow = $("<img class='nextArrow' src='img/icon-arrow-down-overlay.svg'
 var $modalProjectImageWrapper = $("<div class='modalProjectImageWrapper'></div>");
 var $modalProjectImage = $("<img class='modalProjectImage' src='img/dashboard-screen.png'>");
 
+function dummyOverlay() {
+    $modalHeader = $("<h2 class='modalHeader'>"+ json.portfolioProjects[0].name +"</h2>");
+    $modalProjectDescription = $("<p class='modalProjectDescription'>"+ json.portfolioProjects[0].description +"</p>");
+    $visitSiteButton = $("<a href='" + json.portfolioProjects[0].destination + "'><button class='visitSiteButton'>Visit Site</button></a>");
+    $modalProjectImage = $("<img class='modalProjectImage' src='" + json.portfolioProjects[0].image + "'>");
+}
+
+dummyOverlay();
 
 // functions for overlay
 
 $('body').append($mainOverlay);
 
 $mainOverlay
-    .append($modalWrapper)
-    .show();
+    .append($modalWrapper);
+    // .show();
 
 $modalWrapper
     .append($modalHeader)
@@ -83,13 +99,3 @@ function closeOverlay() {
 $modalClose.click(function(){
     closeOverlay();
 });
-
-// Work module generator
-
-// create a for loop
-// make the counter the length of the JSON portfolioProject object.
-// create an unordered list outside of the loop
-// create list items inside of the loop
-// append the ul to portfolio div
-// append the li to the ul
-// each li will contain an image, a title, a short description and a learn more button

@@ -3,8 +3,41 @@
   margin: 0 auto;
   width: 90%;
 
-  h1 {
+  h1{
     color: $red;
+  }
+
+  h3, p {
+    color: $white;
   }
 }
 
+.work-item {
+  background: $blue;
+  height: auto;
+  margin: 0 0 20px 0;
+  position: relative;
+
+  button {
+    bottom: 30px;
+    left: 5px;
+    position: absolute;
+  }
+
+  h3 {
+    left: 5px;
+    position: absolute;
+    top: -10px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    font-size: 0.8em;
+    left: 5px;
+    position: absolute;
+    top: 30px;
+  }
+}
