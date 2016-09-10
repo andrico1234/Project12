@@ -151,12 +151,16 @@ hr {
   color: #34495d;
   font-size: 0.8em;
   letter-spacing: 0;
-  padding: 5px; }
+  margin: 0 auto;
+  padding: 5px;
+  width: 90%; }
 
 .modalProjectImageWrapper {
   text-align: center; }
 
 .modalProjectImage {
+  border: 2px solid #34495d;
+  border-radius: 5px;
   width: 90%; }
 
 .modalSecondaryHeader {
@@ -172,8 +176,10 @@ hr {
 .visitSiteButton {
   background-color: #e8535b;
   border: 1px solid white;
+  border-radius: 5px;
   font-size: 0.9em;
   height: 30px;
+  margin: 10px 0;
   width: 90px; }
   .visitSiteButton:active {
     background-color: #e53d46;

@@ -97,7 +97,9 @@ hr {
     size: 0.8em;
   }
   letter-spacing: 0;
+  margin: 0 auto;
   padding: 5px;
+  width: 90%;
 }
 
 .modalProjectImageWrapper {
@@ -105,6 +107,8 @@ hr {
 }
 
 .modalProjectImage {
+  border: 2px solid $blue;
+  border-radius: 5px;
   width: 90%;
 }
 
@@ -132,10 +136,12 @@ hr {
   }
 
   border: 1px solid white;
+  border-radius: 5px;
   font: {
     size: 0.9em;
   }
   height: 30px;
+  margin: 10px 0;
   width: 90px;
 
   &:active {
