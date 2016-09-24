@@ -6,38 +6,85 @@
   h1{
     color: $red;
   }
+}
 
-  h3, p {
-    color: $white;
-  }
+.js-transition {
+  color: $blue;
+  position: absolute;
+  opacity: 0;
+  transition: opacity .25s linear;
 }
 
 .work-item {
-  background: $blue;
   height: auto;
   margin: 0 0 20px 0;
   position: relative;
+  width: 100%;
 
   button {
-    bottom: 30px;
-    left: 5px;
-    position: absolute;
+    @extend .js-transition;
+    background: none;
+    left: 20px;
+    bottom: 20px;
+    border: 1px solid $blue;
+    padding: 10px;
+
+    &:active {
+      box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.3);
+    }
   }
 
   h3 {
+    @extend .js-transition;
     left: 5px;
-    position: absolute;
     top: -10px;
+    padding: 10px 20px;
+
   }
 
   img {
     width: 100%;
+    opacity: 1;
+    transition: opacity .25s linear;
+    height: 100%;
+  }
+
+  img:hover {
+  opacity: 0.5;
   }
 
   p {
+    @extend .js-transition;
     font-size: 0.8em;
+    font-weight: 500;
     left: 5px;
-    position: absolute;
     top: 30px;
+    padding: 10px 20px;
+  }
+}
+
+.work-item:hover {
+
+  img {
+    opacity: 0.4;
+  }
+
+  p, h3, button {
+  opacity: 1;
+  }
+
+}
+
+@media screen and (min-width: $tablet) {
+
+  .portfolio-list li {
+    display: inline-block;
+    width: 47.5%;
+  }
+  .portfolio-list li:nth-child(even) {
+   float: right;
+ }
+  .portfolio-list li:last-child {
+    padding-bottom: 40px;
   }
 }

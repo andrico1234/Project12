@@ -1,6 +1,7 @@
 /**
  * Created by Home on 31/08/2016.
  */
+(function() {
 
 // variables for overlay
 
@@ -99,3 +100,5 @@ function closeOverlay() {
 $modalClose.click(function(){
     closeOverlay();
 });
+
+})();

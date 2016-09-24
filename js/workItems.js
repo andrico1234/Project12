@@ -1,6 +1,7 @@
 /**
  * Created by Home on 10/09/2016.
  */
+(function() {
 
 var json = (function() {
     var json = null;
@@ -34,3 +35,9 @@ function workItemForLoop() {
 }
 
 workItemForLoop();
+
+// when mouse is over list item
+// the img element goes 0.5 opacity over 500ms
+// the hidden text becomes visible
+
+})();

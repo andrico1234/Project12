@@ -10,6 +10,12 @@
     top: 20px;
   }
   width: 90%;
+
+  @media screen and (min-width: $desktop) {
+    h1 {
+      text-align: center;
+    }
+  }
 }
 
 .arrow-up-container {

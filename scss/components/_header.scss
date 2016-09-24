@@ -1,6 +1,6 @@
 header {
-  background: linear-gradient($blue, transparent 60%),
-  linear-gradient(0deg, lighten($blue, 20%), transparent 80%),
+  background: linear-gradient($blue, transparent 70%),
+  linear-gradient(0deg, lighten($blue, 10%), transparent 90%),
   #ffa949 url('../../img/hero-image-mobile.jpg') no-repeat center;
   background-size: cover;
   color: white;
@@ -18,19 +18,31 @@ header {
       bottom: 20px;
     }
   }
+
+  p {
+    line-height: 30px;
+
+    @media screen and (min-width: $tablet) {
+      width: 60%;
+    }
+  }
 }
 
-nav {
-  ul {
-    margin: 0 auto;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-  }
+
+
+.nav-class {
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
 
   li {
     display: inline-block;
     padding: 5px 15px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    text-align: right;
   }
 }
 
@@ -40,7 +52,7 @@ nav {
   padding: 30px 0 30px 0;
   position: absolute;
   text-align: left;
-  width: 100%;
+  width: 90%;
 
   .arrow-down {
     transform: rotate(180deg);

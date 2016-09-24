@@ -36,13 +36,13 @@
       "destination": "http://andricokaroulla.com/api-gallery-10/"
     }
   ],
-  "about me": [
+  "aboutMe": [
     {
-      "title": "About",
-      "profile-pic": "src",
-      "aboutme-title": "",
-      "aboutme-paragraph-one": "talk about web development",
-      "aboutme-paragraph-two": "talk about personal interest"
+      "about": "About",
+      "profilePic": "img/profile-picture.jpg",
+      "aboutmeTitle": "London Based Front-End Web Developer",
+      "aboutmeParagraphOne": "Treehouse TechDegree graduate who specialises in responsive Front-end Development. Andrico's projects are optimised for both mobile and tablet and are compatible in a variety of browsers. Andrico also commercial experience working with AngularJs and C#. ",
+      "aboutmeParagraphTwo": "Other interests included playing music, specifically Hard Rock and Jazz. Andrico also regularly attends courses snd classes relating to all aspects of web development and has hopes of becoming full stack. You can get in touch through social media for any freelance work or other enquiries."
     }
   ]
 }
