@@ -13,6 +13,9 @@ p {
 *:active, *:focus {
   outline: none; }
 
+.aboutOverlay-close:hover, .nav-class li:hover, .modalClose:hover {
+  cursor: pointer; }
+
 header {
   background: linear-gradient(#34495d, transparent 70%), linear-gradient(0deg, #46637e, transparent 90%), #ffa949 url("../../img/hero-image-mobile.jpg") no-repeat center;
   background-size: cover;

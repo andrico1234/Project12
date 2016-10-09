@@ -16,9 +16,7 @@
         });
         return json;
     })();
-
-    console.log(json.aboutMe[0].about);
-
+    
     var $aboutOverlay = $("<div class='aboutOverlay'></div>");
     var $aboutOverlayWrapper = $("<div class='aboutOverlay-wrapper'></div>");
     var $aboutOverlayHeader = $("<h1 class='aboutOverlay-header'>" + json.aboutMe[0].about + "</h1>");
@@ -37,9 +35,7 @@
     $('body').append($aboutOverlay);
 
     $aboutOverlay
-        .append($aboutOverlayWrapper)
-        .show();
-
+        .append($aboutOverlayWrapper);
     $aboutOverlayWrapper
         .append($aboutOverlayHeader)
         .append($aboutOverlayClose)
@@ -59,13 +55,18 @@
         .append($aboutOverlayButton);
 
     function openAboutOverlay() {
-
         $aboutOverlay.show();
+    }
+
+    function closeAboutOverlay() {
+        $aboutOverlay.hide();
     }
 
     $openOverlayButton.click(function(){
         openAboutOverlay();
-    })
-    
+    });
 
+    $(".aboutOverlay-close").click(function(){
+       closeAboutOverlay();
+    });
 })();

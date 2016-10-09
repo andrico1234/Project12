@@ -1,9 +1,8 @@
-
 .work-wrapper {
   margin: 0 auto;
   width: 90%;
 
-  h1{
+  h1 {
     color: $red;
   }
 }
@@ -50,7 +49,7 @@
   }
 
   img:hover {
-  opacity: 0.5;
+    opacity: 0.5;
   }
 
   p {
@@ -64,15 +63,13 @@
 }
 
 .work-item:hover {
-
   img {
     opacity: 0.4;
   }
 
   p, h3, button {
-  opacity: 1;
+    opacity: 1;
   }
-
 }
 
 @media screen and (min-width: $tablet) {
@@ -82,8 +79,8 @@
     width: 47.5%;
   }
   .portfolio-list li:nth-child(even) {
-   float: right;
- }
+    float: right;
+  }
   .portfolio-list li:last-child {
     padding-bottom: 40px;
   }

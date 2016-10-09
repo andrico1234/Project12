@@ -20,3 +20,9 @@ p {
 *:active, *:focus {
   outline: none;
 }
+
+.aboutOverlay-close, .nav-class li, .modalClose {
+  &:hover {
+    cursor: pointer;
+  }
+}
