@@ -16,7 +16,7 @@
         });
         return json;
     })();
-    
+
     var $mainOverlay = $("<div class='mainOverlay'></div>");
     var $modalWrapper = $("<div class='modalWrapper'></div>");
     var $modalHeader;
@@ -35,6 +35,7 @@
     var $nextArrow = $("<img class='nextArrow' src='img/icon-arrow-down-overlay.svg'>");
     var $modalProjectImageWrapper = $("<div class='modalProjectImageWrapper'></div>");
     var $modalProjectImage = $("<img class='modalProjectImage' src='img/dashboard-screen.png'>");
+    var modalCounter;
 
     (function overlayContents() {
         $modalHeader = $("<h2 class='modalHeader'></h2>");
@@ -42,7 +43,7 @@
         $visitSiteButton = $("<a class='modalProjectDestination' target='_blank'><button class='visitSiteButton'>Visit Site</button></a>");
         $modalProjectImage = $("<img class='modalProjectImage''>");
     })();
-    
+
     $('body').append($mainOverlay);
 
     $mainOverlay
@@ -75,8 +76,61 @@
     $nextButtonDiv
         .append($nextTitle)
         .append($nextArrow);
-    
+
+    $(document).keydown(function (k) {
+        if (k.keyCode == 39) {
+            nextProject();
+        }
+    });
+
+    $(document).keydown(function (k) {
+        if (k.keyCode == 37) {
+            prevProject();
+        }
+    });
+
+    $(document).keydown(function (k) {
+        if (k.keyCode == 27) {
+            closeOverlay();
+        }
+    });
+
+    $('.work-item').click(function () {
+        var jsonNumber = this.dataset.index;
+        openOverlay(jsonNumber);
+    });
+
+    $modalClose.click(function () {
+        closeOverlay();
+    });
+
+    $('.nextButtonDiv').click(function () {
+        nextProject();
+    });
+
+    $('.previousButtonDiv').click(function () {
+        prevProject();
+    });
+
+    function closeOverlay() {
+        $mainOverlay.hide();
+    }
+
+    function nextProject() {
+        if (modalCounter + 1 < json.portfolioProjects.length) {
+            modalCounter++;
+        } else {
+            modalCounter = 0;
+        }
+        $('.modalHeader').html(json.portfolioProjects[modalCounter].name);
+        $('.modalProjectDescription').html(json.portfolioProjects[modalCounter].description);
+        $('.modalSecondaryHeader').html('Project ' + (~~modalCounter + 1));
+        $('.modalProjectDestination').attr('href', json.portfolioProjects[modalCounter].destination);
+        $('.modalProjectImage').attr('src', json.portfolioProjects[modalCounter].image);
+    }
+
     function openOverlay(number) {
+        modalCounter = number;
         $('.modalHeader').html(json.portfolioProjects[number].name);
         $('.modalProjectDescription').html(json.portfolioProjects[number].description);
         $('.modalSecondaryHeader').html('Project ' + (~~number + 1));
@@ -84,22 +138,18 @@
         $('.modalProjectImage').attr('src', json.portfolioProjects[number].image);
         $mainOverlay.show();
     }
-    // make a global variable that stores the same number that goes into openOverlay.
-    // when next is called, add 1 to that number, make all of the current 'number' vars the new value.
-    // when prev is called, deduct 1 to the nuber
-    // when next is called and number is length of array then make number 0
-    // when prev is called and number is 0, make number length of array
 
-    $('.learn-more').click(function () {
-        var jsonNumber = this.parentElement.dataset.index;
-        openOverlay(jsonNumber);
-    });
-
-    function closeOverlay() {
-        $mainOverlay.hide();
+    function prevProject() {
+        if (modalCounter > 0) {
+            modalCounter--;
+        } else {
+            modalCounter = json.portfolioProjects.length;
+            modalCounter--;
+        }
+        $('.modalHeader').html(json.portfolioProjects[modalCounter].name);
+        $('.modalProjectDescription').html(json.portfolioProjects[modalCounter].description);
+        $('.modalSecondaryHeader').html('Project ' + (~~modalCounter + 1));
+        $('.modalProjectDestination').attr('href', json.portfolioProjects[modalCounter].destination);
+        $('.modalProjectImage').attr('src', json.portfolioProjects[modalCounter].image);
     }
-
-    $modalClose.click(function () {
-        closeOverlay();
-    });
 })();

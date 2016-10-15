@@ -121,11 +121,12 @@ hr {
 }
 
 .aboutOverlayProject-imageWrapper {
-  text-align: left;
+  text-align: center;
   margin: 0 5%;
 
   @media screen and (min-width: $tablet) {
     display: inline-block;
+    height: 100%;
     width: 50%;
     margin-right: 0;
   }
@@ -143,7 +144,10 @@ hr {
 
 .aboutOverlay-profilePicture {
   display: inline-block;
-  width: 100%;
+  width: 70%;
+  @media screen and (min-width: $tablet) {
+    width: 100%;
+  }
 }
 
 .modalSecondaryHeader, .aboutOverlay-secondaryHeader {
@@ -173,7 +177,7 @@ hr {
 
   @media screen and (min-width: $tablet) {
     margin-top: 50px;
-    max-width: 700px;
+    max-width: 600px;
   }
 }
 

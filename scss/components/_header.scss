@@ -7,6 +7,13 @@ header {
   min-height: 380px;
   padding-top: 30px;
   position: relative;
+
+  @media screen and (min-width: $tablet) {
+    background: linear-gradient($blue, transparent 70%),
+    linear-gradient(0deg, lighten($blue, 10%), transparent 90%),
+    #ffa949 url('../../img/laptop-image-desktp.jpg') no-repeat center;
+    min-height: 340px;
+  }
 }
 
 .header-wrapper {

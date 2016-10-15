@@ -54,6 +54,12 @@
         .append($aboutOverlayDescriptionTwo)
         .append($aboutOverlayButton);
 
+    $(document).keydown(function (k) {
+        if (k.keyCode == 27) {
+            closeAboutOverlay();
+        }
+    });
+
     function openAboutOverlay() {
         $aboutOverlay.show();
     }
